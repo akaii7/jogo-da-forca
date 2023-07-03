@@ -2,7 +2,7 @@ from api_key import API_KEY
 import requests
 import json
 
-def pick_word() -> str:
+def ask_for_word() -> str:
     headers = {
         'Authorization': f'Bearer {API_KEY}',
         'Content-Type': 'application/json'
