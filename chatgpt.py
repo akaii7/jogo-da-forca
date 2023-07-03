@@ -23,6 +23,8 @@ def ask_for_word() -> str:
     request = requests.post(link,headers=headers,data=message_body)
 
     response = request.json()
-    word = response['choices'][0]['message']['content']
-    
-    return word
+
+    if response.get('error') is None:
+        word = response['choices'][0]['message']['content']
+        return word
+    return None
